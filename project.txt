@@ -29,3 +29,26 @@ Stack: Python, Hugging Face Inference API (offline only), Detoxify,
 
 Recruiter takeaway: You understand AI safety, bias detection, and can
 build production-grade moderation tooling — critical industry skills.
+
+======================================================
+PROGRESS
+======================================================
+[x] Phase 1 — Data Collection
+      - Sampled 10 prompts (5 challenging + 5 normal) from RealToxicityPrompts
+      - Ran prompts through Llama-3.1-8B and Qwen2.5-7B via Ollama (local)
+      - Saved 20 model responses to outputs.csv
+
+[x] Phase 2 — Toxicity Scoring
+      - Scored all responses using Detoxify (local, no API)
+      - Results: llama3.1:8b avg 0.0008, qwen2.5:7b avg 0.0006
+      - Saved to scored_outputs.csv
+
+[ ] Phase 3 — Moderation Module
+      - Flag responses above toxicity threshold
+      - Block or rewrite flagged outputs
+      - Save to moderated_outputs.csv
+
+[ ] Phase 4 — Streamlit Dashboard
+      - Bar/heatmap charts comparing toxicity across models and categories
+      - Live text box for real-time Detoxify scoring
+      - Deploy to Streamlit Community Cloud
