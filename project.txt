@@ -1,0 +1,31 @@
+PROJECT 1: Toxicity Stress-Test & Moderation Pipeline
+======================================================
+Dataset: RealToxicityPrompts (Hugging Face)
+
+What you build:
+  - Run RealToxicityPrompts through 2-3 open-source models (e.g., Mistral-7B,
+    LLaMA-2, Falcon. models i can acces through huggingface Inference) via Hugging Face Inference API (free tier). Run once
+    offline and save all outputs to CSV — no live API calls at demo time.
+  - A scoring layer that measures toxicity of each saved output using
+    Detoxify (runs locally, free, no API needed).
+  - A moderation script that flags outputs above a toxicity threshold and
+    either blocks them or rewrites them using a safer prompt.
+  - A Streamlit dashboard (zero API cost) that visualizes pre-computed
+    results + a live text box where users score any custom sentence with
+    Detoxify in real time.
+
+Key deliverables:
+  - Bar/heatmap charts comparing toxicity rates across models, broken down
+    by prompt category (e.g., identity attacks, profanity, threats).
+  - The moderation script as a reusable Python module.
+  - Quantified outcome: e.g., "Moderation layer reduced harmful outputs by
+    73% on identity-attack prompts for LLaMA-2."
+  - A written analysis: which prompt types most reliably break each model,
+    and which model is safest out of the box.
+  - Live Streamlit dashboard deployed on Streamlit Community Cloud (free).
+
+Stack: Python, Hugging Face Inference API (offline only), Detoxify,
+       Streamlit, matplotlib/seaborn, pandas, Jupyter notebook.
+
+Recruiter takeaway: You understand AI safety, bias detection, and can
+build production-grade moderation tooling — critical industry skills.

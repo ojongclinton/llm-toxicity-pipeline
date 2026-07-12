@@ -1,0 +1,10 @@
+huggingface_hub
+requests
+pandas
+detoxify
+streamlit
+matplotlib
+seaborn
+python-dotenv
+torch
+transformers
