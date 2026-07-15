@@ -43,12 +43,12 @@ PROGRESS
       - Results: llama3.1:8b avg 0.0008, qwen2.5:7b avg 0.0006
       - Saved to scored_outputs.csv
 
-[ ] Phase 3 — Moderation Module
-      - Flag responses above toxicity threshold
-      - Block or rewrite flagged outputs
-      - Save to moderated_outputs.csv
+[x] Phase 3 — Moderation Module
+      - Applied block strategy at threshold=0.5
+      - 0/20 responses flagged (instruction-tuned models passed cleanly)
+      - Saved to moderated_outputs.csv
 
-[ ] Phase 4 — Streamlit Dashboard
+[x] Phase 4 — Streamlit Dashboard
       - Bar/heatmap charts comparing toxicity across models and categories
       - Live text box for real-time Detoxify scoring
       - Deploy to Streamlit Community Cloud

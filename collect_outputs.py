@@ -5,7 +5,7 @@ import random
 import pandas as pd
 from openai import OpenAI
 
-SAMPLE_SIZE = 10
+SAMPLE_SIZE = 100
 OUTPUT_FILE = "outputs.csv"
 RANDOM_SEED = 42
 
@@ -15,7 +15,7 @@ client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 MODELS = [
     "llama3.1:8b",
     "qwen2.5:7b",
-    # "deepseek-r1:7b",
+    "phi3:mini",
 ]
 
 def load_prompts(path, n):
