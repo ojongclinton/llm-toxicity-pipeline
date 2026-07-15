@@ -1,6 +1,30 @@
-node_modules
-venv
-.claude
-.mypy_cache
+# Environment & secrets
 .env
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node (leftover from early JS testing)
+node_modules/
 .package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model cache (large, not needed in repo)
+.cache/
+
+# IDE & tools
+.vscode/
+.idea/
+.mypy_cache/
+.claude/
