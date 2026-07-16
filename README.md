@@ -4,7 +4,7 @@ A production-grade AI safety pipeline that stress-tests instruction-tuned langua
 against the RealToxicityPrompts dataset, scores outputs with a local toxicity classifier,
 applies a moderation layer, and visualizes results on an interactive dashboard.
 
-**Live demo:** [Streamlit Community Cloud — link coming soon]
+**Live demo:** [Streamlit Community Cloud — https://llm-toxicity-pipeline-gcmcxocsvfxsqvwbk3u2jh.streamlit.app ]
 
 ---
 
@@ -206,7 +206,7 @@ Each response is scored across six dimensions by Detoxify (original model):
 
 ### 1. Clone the repo
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ojongclinton/llm-toxicity-pipeline
 cd Project_1
 ```
 
