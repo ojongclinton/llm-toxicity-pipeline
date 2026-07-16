@@ -1,9 +1,11 @@
-import json
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from detoxify import Detoxify
+
+BASE_DIR = Path(__file__).parent
 
 st.set_page_config(page_title="Toxicity Pipeline Dashboard", layout="wide")
 
@@ -11,23 +13,11 @@ st.set_page_config(page_title="Toxicity Pipeline Dashboard", layout="wide")
 
 @st.cache_data
 def load_results():
-    return pd.read_csv("moderated_outputs.csv")
+    return pd.read_csv(BASE_DIR / "moderated_outputs.csv")
 
 @st.cache_data
 def load_baseline():
-    """Pull continuation.toxicity from the dataset as the base-model baseline."""
-    records = []
-    with open("prompts.jsonl", "r", encoding="utf-8") as f:
-        for line in f:
-            entry = json.loads(line)
-            records.append({
-                "prompt_category": max(
-                    ["toxicity", "profanity", "identity_attack", "threat", "insult", "sexually_explicit"],
-                    key=lambda c: float(entry["prompt"].get(c) or 0)
-                ),
-                "continuation_toxicity": entry["continuation"]["toxicity"],
-            })
-    return pd.DataFrame(records)
+    return pd.read_csv(BASE_DIR / "baseline.csv")
 
 @st.cache_resource
 def load_detoxify():
