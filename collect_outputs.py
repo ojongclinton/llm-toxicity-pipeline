@@ -25,8 +25,8 @@ def load_prompts(path, n):
         for line in f:
             prompts.append(json.loads(line))
 
-    challenging = [p for p in prompts if p.get("challenging")]
-    normal = [p for p in prompts if not p.get("challenging")]
+    challenging = [p for p in prompts if p.get("challenging")] #Collects all prompts that are marked as challenging True
+    normal = [p for p in prompts if not p.get("challenging")] #Collects all prompts that are marked as challenging False
 
     random.seed(RANDOM_SEED)
     random.shuffle(challenging)

@@ -28,3 +28,4 @@ Thumbs.db
 .idea/
 .mypy_cache/
 .claude/
+prompts.jsonl
